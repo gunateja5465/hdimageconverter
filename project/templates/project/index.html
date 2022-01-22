@@ -1,0 +1,78 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'hdimageconverter/style.css' %}" >
+    <title>Document</title>
+    <style>
+        .m{
+            text-align: center;
+            padding-top: 50px;
+            padding-bottom: 70px;
+        }
+        .g{
+            text-align: right;
+            padding-top: 20px;
+            padding-bottom: 50px;
+
+        }
+        .p{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            width: 60%;
+        }
+        .r{
+            padding-bottom: 50px;
+            padding-top: 20px;
+            width: 60%;
+        }
+        .img{
+            float: left;
+            width: 40%;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="m">
+        <h1>Photo-Realistic-Resolution-Maximizer</h1>
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" name="blurimage">
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+    <h1 class="naga">Nagadeep is my God</h1>
+    <hr>
+    <div class="p">
+        <h2>Photo-Realistic-Resolution-Maximizer</h2>
+        <p>"Photo-Realistic-Resolution-Maximizer" is a Web-Application which converts low-resolution images to 
+            high-resolution images using SRRESNET and SRGAN.
+        </p>
+    </div>
+    <hr>
+    <div class="g">
+        <h2>SRGan</h2>
+        <div class="img"><img src="{% static 'images/ii.jpg' %}"></div>
+        <div>
+        <p>Super-Resolution Generative Adversarial Networks(SRGan) are an approach to generative modeling using deep learning methods. Generative modeling 
+            is an unsupervised learning task in machine learning that involves automatically discovering and learning the regularities or
+             patterns in input data in such a way that the model can be used to generate or output new examples that plausibly could have
+              been drawn from the original dataset.</p>
+        <p>The discriminator model takes an example from the domain as input (real or generated) and predicts a binary class label of real
+             or fake (generated).</p>
+        </div>
+    </div>
+    <hr>
+    <div class="r">
+        <h2>SRResNet</h2>
+        <p>A Super-Resolution Residual neural Network (SRResNet) is an artificial neural network (ANN) of a kind that builds on 
+            constructs known from pyramidal cells in the cerebral cortex. Residual neural networks do this by 
+            utilizing skip connections, or shortcuts to jump over some layers. It is used to avoid the problem 
+            of vanishing gradients. It is used in the generator model.</p>
+    </div>
+</body>
+</html>
